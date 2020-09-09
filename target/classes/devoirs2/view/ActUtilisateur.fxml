@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="366.0" prefWidth="779.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="devoirs2.controller.ActUserController">
+    <children>
+        <AnchorPane layoutY="6.0" prefHeight="366.0" prefWidth="228.0" style="-fx-background-color: #E4DEF6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+            <Label layoutX="18.0" layoutY="14.0" prefHeight="28.0" prefWidth="184.0" style="-fx-font-family: forte;" text="Tableau des utilisateurs" textFill="#867fb6" underline="true">
+               <font>
+                  <Font name="Bell MT Italic" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nomTfd" layoutX="36.0" layoutY="61.0" />
+            <TextField fx:id="prenomTfd" layoutX="36.0" layoutY="105.0" />
+            <TextField fx:id="dateTfd" layoutX="36.0" layoutY="142.0" />
+            <TextField fx:id="adrTfd" layoutX="36.0" layoutY="183.0" />
+            <TextField fx:id="logTfd" layoutX="36.0" layoutY="220.0" />
+            <ChoiceBox fx:id="profileCbx" layoutX="35.0" layoutY="269.0" prefWidth="150.0" />
+            </children>
+        </AnchorPane>
+        <TableView fx:id="table_users" layoutX="228.0" onMouseClicked="#getSelected" prefHeight="212.0" prefWidth="551.0">
+            <columns>
+                <TableColumn fx:id="nomCol" prefWidth="75.0" text="Nom" />
+                <TableColumn fx:id="prenomCol" prefWidth="75.0" text="Prenom" />
+                <TableColumn fx:id="dateCol" prefWidth="92.0" text="Date" />
+                <TableColumn fx:id="adrCol" prefWidth="97.0" text="Adresse" />
+                <TableColumn fx:id="logCol" prefWidth="115.0" text="Login" />
+            <TableColumn fx:id="profileCol" prefWidth="115.0" text="Profile" />
+            </columns>
+        </TableView>
+      <Button fx:id="selectUserBtn" layoutX="449.0" layoutY="253.0" mnemonicParsing="false" onAction="#SelectHandler" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: C4951F; -fx-font-family: forte; -fx-font-size: 17;" text="Selectionner" textFill="#fcf5f5" />
+          <Button fx:id="bloquerUserBtn" layoutX="260.0" layoutY="253.0" mnemonicParsing="false" onAction="#BloquerHandler" onMouseClicked="#eventBloq" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: C4471F; -fx-font-family: forte; -fx-font-size: 17;" text="Bloquer" textFill="#fcf5f5" />
+      <Button fx:id="ModifUserBtn" layoutX="642.0" layoutY="253.0" mnemonicParsing="false" onAction="#ModifHandler" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #1FC440 #1FC440; -fx-font-family: forte; -fx-font-size: 17;" text="Modifier" textFill="#fcf5f5" />
+    </children>
+</AnchorPane>

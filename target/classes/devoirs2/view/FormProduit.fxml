@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="602.0" prefWidth="714.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="devoirs2.controller.ProduitController">
+   <children>
+      <HBox layoutX="52.0" layoutY="14.0" minWidth="-Infinity" prefHeight="287.0" prefWidth="595.0" style="-fx-border-color: blue;">
+         <children>
+            <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="186.0" prefWidth="271.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="102.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="156.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <HBox.margin>
+                  <Insets left="150.0" right="60.0" top="54.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="91.0" text="Description" />
+                  <Label prefHeight="17.0" prefWidth="91.0" text="Prix Minimal" GridPane.rowIndex="1" />
+                  <Label prefHeight="17.0" prefWidth="97.0" text="Prix Unitaire" GridPane.rowIndex="2" />
+                  <TextField fx:id="descTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="pmTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="puTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label prefHeight="17.0" prefWidth="102.0" text="Quantite en Stock" GridPane.rowIndex="3" />
+                  <TextField fx:id="qtestckTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label prefHeight="17.0" prefWidth="91.0" text="Date d'entree" GridPane.rowIndex="4" />
+                  <Label prefHeight="17.0" prefWidth="106.0" text="Quantite d'entree" GridPane.rowIndex="5" />
+                  <TextField fx:id="dateEntreeTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <TextField fx:id="qteEntreeTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+               </children>
+            </GridPane>
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="144.0" text="Ajouter un produit" textAlignment="CENTER" textFill="#08558c">
+               <HBox.margin>
+                  <Insets left="-260.0" top="5.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets left="1.0" right="1.0" />
+               </padding>
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <Blend />
+         </effect>
+      </HBox>
+      <Button fx:id="ajoutBtn" layoutX="490.0" layoutY="313.0" mnemonicParsing="false" onAction="#ajoutHandler" prefHeight="25.0" prefWidth="117.0" text="Ajouter" />
+      <TableView fx:id="DtTb" layoutX="108.0" layoutY="360.0" prefHeight="113.0" prefWidth="484.0">
+         <columns>
+            <TableColumn fx:id="descCol" prefWidth="154.0" text="Description" />
+            <TableColumn fx:id="prixMinCol" prefWidth="102.0" text="Prix Min" />
+            <TableColumn fx:id="pUCol" prefWidth="113.0" text="Prix unitaire" />
+            <TableColumn fx:id="qteSCol" prefWidth="114.0" text="Qte en Stock" />
+         </columns>
+      </TableView>
+      <Button fx:id="selectBtn" layoutX="95.0" layoutY="516.0" mnemonicParsing="false" onAction="#selectHandler" prefHeight="25.0" prefWidth="117.0" text="Selectionner" />
+      <Button fx:id="modifBtn" layoutX="279.0" layoutY="516.0" mnemonicParsing="false" onAction="#modifHandler" prefHeight="25.0" prefWidth="117.0" text="Modifier" />
+      <Button fx:id="supBtn" layoutX="466.0" layoutY="516.0" mnemonicParsing="false" onAction="#supHandler" prefHeight="25.0" prefWidth="117.0" text="Supprimer" />
+      <Button fx:id="approBtn" layoutX="154.0" layoutY="313.0" mnemonicParsing="false" onAction="#approtHandler" prefHeight="25.0" prefWidth="117.0" text="Approvisionner" />
+   </children>
+</AnchorPane>

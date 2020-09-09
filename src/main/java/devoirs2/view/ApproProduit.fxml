@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="468.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="devoirs2.controller.ApproController">
+   <children>
+      <HBox layoutY="14.0" minWidth="-Infinity" prefHeight="191.0" prefWidth="345.0" style="-fx-background-color: #E4DEF6;">
+         <children>
+            <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="123.0" prefWidth="271.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="102.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="156.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <HBox.margin>
+                  <Insets left="100.0" right="60.0" top="54.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets left="5.0" />
+               </padding>
+               <children>
+                  <Label prefHeight="17.0" prefWidth="91.0" style="-fx-font-size: 15; -fx-font-family: forte;" text="Description" textFill="#867fb6" />
+                  <Label prefHeight="17.0" prefWidth="106.0" style="-fx-font-size: 15; -fx-font-family: forte;" text="Qte Approvisionnée" textFill="#867fb6" GridPane.rowIndex="1" />
+                  <Label prefHeight="17.0" prefWidth="97.0" style="-fx-font-size: 15; -fx-font-family: forte;" text="Date d'entrée" textFill="#867fb6" GridPane.rowIndex="2" />
+                  <TextField fx:id="descTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" />
+                  <TextField fx:id="qteAppTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="dateTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+               </children>
+            </GridPane>
+            <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="234.0" style="-fx-font-size: 15; -fx-font-family: forte;" text="Approvisionnement d'un produit" textAlignment="CENTER" textFill="#867fb6">
+               <HBox.margin>
+                  <Insets left="-290.0" top="5.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets left="1.0" right="1.0" />
+               </padding>
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <Blend />
+         </effect>
+         <padding>
+            <Insets left="-65.0" />
+         </padding>
+      </HBox>
+      <Button fx:id="ajoutApproBtn" layoutX="243.0" layoutY="224.0" mnemonicParsing="false" onAction="#ajoutApproHandler" prefHeight="38.0" prefWidth="97.0" style="-fx-background-color: #1FC440 #1FC440; -fx-font-family: forte;" text="Ajouter" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <TableView fx:id="DtTbAppro" layoutX="162.0" layoutY="292.0" prefHeight="113.0" prefWidth="466.0">
+         <columns>
+            <TableColumn fx:id="dateCol" prefWidth="202.0" text="Date d'entree" />
+            <TableColumn fx:id="qteCol" minWidth="0.0" prefWidth="149.0" text="Quantité Entrée" />
+            <TableColumn fx:id="prodCol" minWidth="0.0" prefWidth="113.0" text="Produit" />
+         </columns>
+      </TableView>
+      <Label alignment="CENTER" layoutX="91.0" layoutY="254.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="188.0" style="-fx-font-size: 15; -fx-font-family: forte;" text="Les entrées d'un produit" textAlignment="CENTER" textFill="#867fb6">
+         <padding>
+            <Insets left="1.0" right="1.0" />
+         </padding>
+         <font>
+            <Font name="Baskerville Old Face" size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="retourApproBtn" layoutX="478.0" layoutY="423.0" mnemonicParsing="false" onAction="#retourApproHandler" prefHeight="25.0" prefWidth="97.0" style="-fx-font-family: forte; -fx-background-color: #8EA2C6;" text="Retour" textFill="#0a40d3">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+   </children>
+</AnchorPane>

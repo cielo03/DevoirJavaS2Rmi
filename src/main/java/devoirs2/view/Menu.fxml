@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="grPane" prefHeight="567.0" prefWidth="1045.0" style="-fx-background-color: #ECEBEF;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="devoirs2.controller.MenuController">
+   <children>
+      <VBox layoutX="-2.0" layoutY="-2.0" prefHeight="572.0" prefWidth="254.0" style="-fx-background-color: #867FB6;">
+         <children>
+            <Pane prefHeight="103.0" prefWidth="254.0">
+               <children>
+                  <ImageView fx:id="logoImg" fitHeight="103.0" fitWidth="148.0" layoutX="74.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/welcom-organisation.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Button fx:id="homeBtn" mnemonicParsing="false" onAction="#homeHandler" prefHeight="44.0" prefWidth="256.0" style="-fx-background-color: #867FB6; hover: #605A8E;" text="Home" textFill="#ffe9e9">
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="gesproBtn" mnemonicParsing="false" onAction="#gesproHandler" prefHeight="44.0" prefWidth="256.0" style="-fx-background-color: #867FB6;" text="Gestion des produits" textFill="#ffe9e9">
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="approBtn" mnemonicParsing="false" onAction="#approHandler" prefHeight="44.0" prefWidth="256.0" style="-fx-background-color: #867FB6;" text="Approvisionement" textFill="#ffe9e9">
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="invBtn" mnemonicParsing="false" onAction="#invHandler" prefHeight="44.0" prefWidth="256.0" style="-fx-background-color: #867FB6;" text="Inventaire" textFill="#ffe9e9">
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="gesClientsBtn" mnemonicParsing="false" onAction="#gesClientsHandler" prefHeight="44.0" prefWidth="256.0" style="-fx-background-color: #867FB6;" text="Gestion des clients" textFill="#ffe9e9">
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="ajoutCmdBtn" mnemonicParsing="false" onAction="#ajoutCmdHandler" prefHeight="44.0" prefWidth="256.0" style="-fx-background-color: #867FB6;" text="Effecturer une commande" textFill="#ffe9e9">
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="gesCmdBtn" mnemonicParsing="false" onAction="#gesCmdHandler" prefHeight="44.0" prefWidth="256.0" style="-fx-background-color: #867FB6;" text="Gestion des commande" textFill="#ffe9e9">
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="gesPaymntBtn" mnemonicParsing="false" onAction="#gesPaymntHandler" prefHeight="44.0" prefWidth="256.0" style="-fx-background-color: #867FB6;" text="Gestion des payements" textFill="#ffe9e9">
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="gesUserBtn" mnemonicParsing="false" onAction="#gesUserHandler" prefHeight="44.0" prefWidth="256.0" style="-fx-background-color: #867FB6;" text="Gestion des utilisateurs" textFill="#ffe9e9">
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="deconnexionBtn" mnemonicParsing="false" onAction="#deconnexionHandler" prefHeight="44.0" prefWidth="256.0" style="-fx-background-color: #867FB6;" text="Deconnexion" textFill="#ffe9e9">
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Pane layoutX="252.0" prefHeight="25.0" prefWidth="802.0" style="-fx-background-color: #E0DEF0;">
+         <children>
+            <Label alignment="CENTER" layoutX="264.0" layoutY="1.0" prefHeight="25.0" prefWidth="187.0" text="Session ouverte par :" textFill="#0b8d18">
+               <font>
+                  <Font name="Bell MT" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="userLbl" layoutX="423.0" layoutY="1.0" prefHeight="25.0" prefWidth="184.0" text="label" textFill="#0b8d18">
+               <font>
+                  <Font name="Bell MT" size="14.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <Label layoutX="523.0" layoutY="548.0" prefHeight="17.0" prefWidth="187.0" text="Copyrights celia corporation-2020">
+         <font>
+            <Font name="Bell MT" size="12.0" />
+         </font>
+      </Label>
+      <Pane fx:id="approPane" layoutX="252.0" layoutY="27.0" prefHeight="525.0" prefWidth="802.0" style="-fx-background-color: #ECEBEF;">
+         <children>
+            <HBox layoutX="3.0" layoutY="49.0" minWidth="-Infinity" prefHeight="233.0" prefWidth="343.0" style="-fx-background-color: #E4DEF6;">
+               <children>
+                  <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="123.0" prefWidth="271.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="102.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="156.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <HBox.margin>
+                        <Insets left="100.0" right="60.0" top="54.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="91.0" style="-fx-font-size: 15; -fx-font-family: forte;" text="Description" textFill="#867fb6" />
+                        <Label prefHeight="17.0" prefWidth="106.0" style="-fx-font-size: 15; -fx-font-family: forte;" text="Qte Approvisionnée" textFill="#867fb6" GridPane.rowIndex="1" />
+                        <Label prefHeight="17.0" prefWidth="97.0" style="-fx-font-size: 15; -fx-font-family: forte;" text="Date d'entrée" textFill="#867fb6" GridPane.rowIndex="2" />
+                        <TextField fx:id="descApproTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="qteAppTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="dateApproTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </TextField>
+                     </children>
+                  </GridPane>
+                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="234.0" style="-fx-font-size: 15; -fx-font-family: forte;" text="Approvisionnement d'un produit" textAlignment="CENTER" textFill="#867fb6">
+                     <HBox.margin>
+                        <Insets left="-290.0" top="5.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="1.0" right="1.0" />
+                     </padding>
+                     <font>
+                        <Font name="Baskerville Old Face" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <Blend />
+               </effect>
+               <padding>
+                  <Insets left="-65.0" />
+               </padding>
+            </HBox>
+            <Button fx:id="ajoutApproBtn" layoutX="264.0" layoutY="296.0" mnemonicParsing="false" onAction="#ajoutApproHandler" prefHeight="38.0" prefWidth="97.0" style="-fx-background-color: #1FC440 #1FC440; -fx-font-family: forte;" text="Ajouter" textFill="WHITE">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <TableView fx:id="DtTbAppro" layoutX="351.0" layoutY="49.0" prefHeight="233.0" prefWidth="448.0">
+               <columns>
+                  <TableColumn fx:id="dateApprCol" prefWidth="160.0" text="Date d'entree" />
+                  <TableColumn fx:id="qteApproCol" minWidth="0.0" prefWidth="158.0" text="Quantité Entrée" />
+                  <TableColumn fx:id="prodApproCol" minWidth="0.0" prefWidth="146.0" text="Produit" />
+               </columns>
+            </TableView>
+            <Label alignment="CENTER" layoutX="352.0" layoutY="14.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="188.0" style="-fx-font-size: 15; -fx-font-family: forte;" text="Les entrées d'un produit" textAlignment="CENTER" textFill="#867fb6">
+               <padding>
+                  <Insets left="1.0" right="1.0" />
+               </padding>
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Label>
+            <Button fx:id="retourApproBtn" layoutX="667.0" layoutY="294.0" mnemonicParsing="false" onAction="#retourApproHandler" prefHeight="38.0" prefWidth="97.0" style="-fx-font-family: forte; -fx-background-color: #8EA2C6;" text="Retour" textFill="#0a40d3">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="clientPane" layoutX="252.0" layoutY="27.0" prefHeight="525.0" prefWidth="802.0" style="-fx-background-color: #ECEBEF;">
+         <children>
+            <HBox minWidth="-Infinity" prefHeight="275.0" prefWidth="802.0" style="-fx-background-color: #E4DEF6;">
+               <children>
+                  <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="217.0" prefWidth="271.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="102.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="156.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <HBox.margin>
+                        <Insets left="250.0" right="60.0" top="54.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="91.0" style="-fx-font-family: forte; -fx-font-size: 15;" text="Nom" textFill="#867fb6" />
+                        <Label prefHeight="17.0" prefWidth="91.0" style="-fx-font-family: forte; -fx-font-size: 15;" text="Prenom" textFill="#867fb6" GridPane.rowIndex="1" />
+                        <Label prefHeight="17.0" prefWidth="97.0" style="-fx-font-family: forte; -fx-font-size: 15;" text="Cni" textFill="#867fb6" GridPane.rowIndex="2" />
+                        <TextField fx:id="nomClientTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="pnomClientTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="cniClientTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label prefHeight="17.0" prefWidth="102.0" style="-fx-font-family: forte; -fx-font-size: 15;" text="Adresse" textFill="#867fb6" GridPane.rowIndex="3" />
+                        <TextField fx:id="adrClientTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label prefHeight="17.0" prefWidth="105.0" style="-fx-font-family: forte; -fx-font-size: 15;" text="Date de naissance" textFill="#867fb6" GridPane.rowIndex="4" />
+                        <Label prefHeight="17.0" prefWidth="106.0" style="-fx-font-family: forte; -fx-font-size: 15;" text="Type de client" textFill="#867fb6" GridPane.rowIndex="5" />
+                        <TextField fx:id="dateClientTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <ChoiceBox fx:id="typeClientCbx" prefHeight="25.0" prefWidth="156.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                     </children>
+                  </GridPane>
+                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="144.0" style="-fx-font-family: forte; -fx-font-size: 15;" text="Ajouter un client" textAlignment="CENTER" textFill="#867fb6" underline="true">
+                     <HBox.margin>
+                        <Insets left="-260.0" top="5.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="1.0" right="1.0" />
+                     </padding>
+                     <font>
+                        <Font name="Baskerville Old Face" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <Blend />
+               </effect>
+            </HBox>
+            <Button fx:id="ajoutCliBtn" layoutX="658.0" layoutY="275.0" mnemonicParsing="false" onAction="#ajoutCliHandler" prefHeight="38.0" prefWidth="119.0" style="-fx-font-family: forte; -fx-font-size: 17; -fx-background-color: #1FC440 #1FC440;" text="Ajouter" textFill="#f5f0f0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <TableView fx:id="ClientTab" layoutX="3.0" layoutY="322.0" prefHeight="116.0" prefWidth="795.0">
+               <columns>
+                  <TableColumn fx:id="nomClientCol" prefWidth="150.0" text="Nom" />
+                  <TableColumn fx:id="pnomClientCol" prefWidth="128.0" text="Prenom" />
+                  <TableColumn fx:id="cniClientCol" prefWidth="107.0" text="Cni" />
+                  <TableColumn fx:id="adrClientCol" prefWidth="130.0" text="Adresse" />
+                  <TableColumn fx:id="typeClientCol" prefWidth="129.0" text="Statut" />
+                  <TableColumn fx:id="dateClientCol" prefWidth="149.0" text="Date" />
+               </columns>
+            </TableView>
+            <Button fx:id="selectCliBtn" layoutX="186.0" layoutY="461.0" mnemonicParsing="false" onAction="#selectCliHandler" prefHeight="38.0" prefWidth="117.0" style="-fx-font-family: forte; -fx-font-size: 17; -fx-background-color: #8EA2C6;" text="Selectionner" textFill="#0257f5">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button fx:id="modifCliBtn" layoutX="499.0" layoutY="461.0" mnemonicParsing="false" onAction="#modifCliHandler" prefHeight="38.0" prefWidth="117.0" style="-fx-font-family: forte; -fx-font-size: 17; -fx-background-color: C4951F;" text="Modifier" textFill="#f8eded">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="inventairePane" layoutX="252.0" layoutY="28.0" prefHeight="517.0" prefWidth="802.0" style="-fx-background-color: #ECEBEF;">
+         <children>
+            <TableView fx:id="tableI_entrees" layoutX="14.0" layoutY="35.0" prefHeight="326.0" prefWidth="343.0">
+               <columns>
+                  <TableColumn fx:id="dateIEntreeCol" prefWidth="120.0" text="Date d'entree" />
+                  <TableColumn fx:id="qteIEntreeCol" minWidth="0.0" prefWidth="113.0" text="Quantité Entrée" />
+                  <TableColumn fx:id="prodEntreeCol" minWidth="0.0" prefWidth="113.0" text="Produit" />
+               </columns>
+            </TableView>
+            <TableView fx:id="tableI_sorties" layoutX="445.0" layoutY="35.0" prefHeight="326.0" prefWidth="343.0">
+               <columns>
+                  <TableColumn fx:id="dateSortieCol" prefWidth="120.0" text="Date de sortie" />
+                  <TableColumn fx:id="qteSortieCol" minWidth="0.0" prefWidth="113.0" text="Quantité Sortie" />
+                  <TableColumn fx:id="prodSortieCol" minWidth="0.0" prefWidth="113.0" text="Produit" />
+               </columns>
+            </TableView>
+            <Pane layoutX="396.0" layoutY="-4.0" prefHeight="359.0" prefWidth="11.0" style="-fx-background-color: #E0DEF0;" />
+            <Label alignment="CENTER" layoutX="14.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="234.0" style="-fx-font-size: 15; -fx-font-family: forte;" text="Listes des entrées" textAlignment="CENTER" textFill="#867fb6">
+               <padding>
+                  <Insets left="1.0" right="1.0" />
+               </padding>
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="449.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="28.0" prefWidth="184.0" style="-fx-font-size: 15; -fx-font-family: forte;" text="Listes des sorties" textAlignment="CENTER" textFill="#867fb6">
+               <padding>
+                  <Insets left="1.0" right="1.0" />
+               </padding>
+               <font>
+                  <Font name="Baskerville Old Face" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="produitPane" layoutX="252.0" layoutY="27.0" prefHeight="525.0" prefWidth="802.0" style="-fx-background-color: #ECEBEF;">
+         <children>
+            <TableView fx:id="DtTbPro" layoutX="318.0" layoutY="67.0" prefHeight="371.0" prefWidth="484.0">
+               <columns>
+                  <TableColumn fx:id="descProCol" prefWidth="154.0" text="Description" />
+                  <TableColumn fx:id="prixMinCol" prefWidth="102.0" text="Prix Min" />
+                  <TableColumn fx:id="pUProCol" prefWidth="113.0" text="Prix unitaire" />
+                  <TableColumn fx:id="qteSProCol" prefWidth="114.0" text="Qte en Stock" />
+               </columns>
+            </TableView>
+            <HBox layoutY="67.0" minWidth="-Infinity" prefHeight="371.0" prefWidth="314.0" style="-fx-background-color: #E4DEF6;">
+               <children>
+                  <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="287.0" prefWidth="271.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="102.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="156.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <HBox.margin>
+                        <Insets left="30.0" right="60.0" top="54.0" />
+                     </HBox.margin>
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="91.0" style="-fx-font-family: forte;" text="Description" textFill="#867fb6">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="91.0" style="-fx-font-family: forte;" text="Prix Minimal" textFill="#867fb6" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="97.0" style="-fx-font-family: forte;" text="Prix Unitaire" textFill="#867fb6" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="descProTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="pmProTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField fx:id="puProTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label prefHeight="17.0" prefWidth="102.0" style="-fx-font-family: forte;" text="Quantite en Stock" textFill="#867fb6" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="qtestckProTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label prefHeight="17.0" prefWidth="91.0" style="-fx-font-family: forte;" text="Date d'entree" textFill="#867fb6" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="106.0" style="-fx-font-family: forte;" text="Quantite d'entree" textFill="#867fb6" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="dateEntreeProTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="qteEntreeProTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                     </children>
+                  </GridPane>
+                  <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="170.0" style="-fx-font-family: forte;" text="Ajouter un produit" textAlignment="CENTER" textFill="#867fb6" underline="true">
+                     <HBox.margin>
+                        <Insets left="-280.0" top="5.0" />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="1.0" right="1.0" />
+                     </padding>
+                     <font>
+                        <Font name="Baskerville Old Face" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <effect>
+                  <Blend />
+               </effect>
+            </HBox>
+            <Button fx:id="ajoutProBtn" layoutX="180.0" layoutY="450.0" mnemonicParsing="false" onAction="#ajoutProHandler" prefHeight="25.0" prefWidth="117.0" style="-fx-background-color: #1FC440 #1FC440; -fx-font-family: forte;" text="Ajouter" textFill="#fcf5f5">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="selectProBtn" layoutX="318.0" layoutY="20.0" mnemonicParsing="false" onAction="#selectHandler" prefHeight="32.0" prefWidth="117.0" style="-fx-font-family: forte; -fx-background-color: #E79518;" text="Selectionner" textFill="#fcf9f9">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="modifProBtn" layoutX="469.0" layoutY="20.0" mnemonicParsing="false" onAction="#modifHandler" prefHeight="25.0" prefWidth="91.0" style="-fx-font-family: forte; -fx-background-color: #867FB6;" text="Modifier" textFill="#fcf9f9">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="supProBtn" layoutX="583.0" layoutY="20.0" mnemonicParsing="false" onAction="#supHandler" prefHeight="25.0" prefWidth="97.0" style="-fx-font-family: forte; -fx-background-color: C4471F;" text="Supprimer" textFill="#fcf9f9">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="approProBtn" layoutX="647.0" layoutY="450.0" mnemonicParsing="false" onAction="#approtHandler" prefHeight="32.0" prefWidth="149.0" style="-fx-font-family: forte;" text="Approvisionner">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="gestCmdPane" layoutX="252.0" layoutY="27.0" onMouseClicked="#getSelectedCmd" prefHeight="525.0" prefWidth="802.0" style="-fx-background-color: #ECEBEF;">
+         <children>
+            <TableView fx:id="table_commandes" layoutX="7.0" layoutY="14.0" onMouseClicked="#getSelectedCmd" prefHeight="233.0" prefWidth="795.0">
+               <columns>
+                  <TableColumn fx:id="numerocmdCol" prefWidth="129.0" text="Numero" />
+                  <TableColumn fx:id="montantCmdCol" prefWidth="227.0" text="Montant" />
+                  <TableColumn fx:id="dateCmdCol" prefWidth="217.0" text="Date" />
+                  <TableColumn fx:id="nomCliCmdCol" prefWidth="221.0" text="Nom du client" />
+               </columns>
+            </TableView>
+            <Button fx:id="bloquerCmdBtn" layoutX="343.0" layoutY="288.0" mnemonicParsing="false" onAction="#BloquerCmdHandler" onMouseClicked="#eventBloq" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: C4471F; -fx-font-family: forte; -fx-font-size: 17;" text="Bloquer" textFill="#fcf5f5" />
+         </children>
+      </Pane>
+      <Pane fx:id="userPane" layoutX="252.0" layoutY="35.0" prefHeight="517.0" prefWidth="802.0" style="-fx-background-color: #ECEBEF;">
+         <children>
+            <AnchorPane layoutX="3.0" layoutY="14.0" prefHeight="366.0" prefWidth="234.0" style="-fx-background-color: #E4DEF6;">
+               <children>
+                  <Label layoutX="18.0" layoutY="14.0" prefHeight="28.0" prefWidth="184.0" style="-fx-font-family: forte;" text="Tableau des utilisateurs" textFill="#867fb6" underline="true">
+                     <font>
+                        <Font name="Bell MT Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nomUserTfd" layoutX="36.0" layoutY="61.0" />
+                  <TextField fx:id="prenomUserTfd" layoutX="36.0" layoutY="105.0" />
+                  <TextField fx:id="dateUserTfd" layoutX="36.0" layoutY="142.0" />
+                  <TextField fx:id="adrUserTfd" layoutX="36.0" layoutY="183.0" />
+                  <TextField fx:id="logUserTfd" layoutX="36.0" layoutY="220.0" />
+                  <ChoiceBox fx:id="profileUserCbx" layoutX="35.0" layoutY="269.0" prefWidth="150.0" />
+               </children>
+            </AnchorPane>
+            <TableView fx:id="table_users" layoutX="242.0" layoutY="14.0" onMouseClicked="#getSelected" prefHeight="366.0" prefWidth="558.0">
+               <columns>
+                  <TableColumn fx:id="nomUserCol" prefWidth="115.0" text="Nom" />
+                  <TableColumn fx:id="prenomUserCol" text="Prenom" />
+                  <TableColumn fx:id="dateUserCol" prefWidth="79.0" text="Date" />
+                  <TableColumn fx:id="adrUserCol" prefWidth="92.0" text="Adresse" />
+                  <TableColumn fx:id="logUserCol" prefWidth="88.0" text="Login" />
+                  <TableColumn fx:id="profileUserCol" prefWidth="103.0" text="Profile" />
+               </columns>
+            </TableView>
+            <Button fx:id="nvUserBtn" layoutX="498.0" layoutY="453.0" mnemonicParsing="false" onAction="#NvUserHandler" prefHeight="40.0" prefWidth="271.0" style="-fx-background-color: C4951F; -fx-font-family: forte; -fx-font-size: 17;" text="Ajouter un nouvel utilisateur?" textFill="#fcf5f5" />
+            <Button fx:id="bloquerUserBtn" layoutX="283.0" layoutY="393.0" mnemonicParsing="false" onAction="#BloquerUserHandler" onMouseClicked="#eventBloq" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: C4471F; -fx-font-family: forte; -fx-font-size: 17;" text="Bloquer" textFill="#fcf5f5" />
+            <Button fx:id="ModifUserBtn" layoutX="665.0" layoutY="393.0" mnemonicParsing="false" onAction="#ModifUserHandler" prefHeight="40.0" prefWidth="123.0" style="-fx-background-color: #1FC440 #1FC440; -fx-font-family: forte; -fx-font-size: 17;" text="Modifier" textFill="#fcf5f5" />
+         </children>
+      </Pane>
+      <Pane fx:id="ajouCmdPane" layoutX="252.0" layoutY="27.0" prefHeight="525.0" prefWidth="802.0" style="-fx-background-color: #ECEBEF;">
+         <children>
+            <TableView fx:id="CommandeTab" layoutX="298.0" layoutY="68.0" prefHeight="310.0" prefWidth="504.0">
+               <columns>
+                  <TableColumn fx:id="desiCol" prefWidth="137.0" text="Designation" />
+                  <TableColumn fx:id="qteCmdeeCol" onEditCommit="#editQte" prefWidth="140.0" text="Quantite commandée" />
+                  <TableColumn fx:id="puProCol" prefWidth="110.0" text="Prix Unitaire" />
+                  <TableColumn fx:id="totalCmdCol" prefWidth="144.0" text="Total" />
+               </columns>
+            </TableView>
+            <Pane layoutX="298.0" prefHeight="62.0" prefWidth="504.0" style="-fx-background-color: #E4DEF6;">
+               <children>
+                  <TextField fx:id="mntCmdTfd" layoutX="150.0" layoutY="20.0" prefHeight="25.0" prefWidth="156.0" />
+                  <Label layoutX="32.0" layoutY="24.0" prefHeight="17.0" prefWidth="105.0" style="-fx-font-family: forte;" text="Montant total" textFill="#6b6262">
+                     <font>
+                        <Font name="Baskerville Old Face" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="ImprimBtn" layoutX="339.0" layoutY="17.0" mnemonicParsing="false" onAction="#impressionHandler" prefHeight="25.0" prefWidth="123.0" style="-fx-background-color: #E7973C9FA518; -fx-font-family: forte; -fx-font-size: 17;" text="Imprimer" textFill="#5b5656" />
+               </children>
+            </Pane>
+            <Pane layoutY="-1.0" prefHeight="262.0" prefWidth="295.0" style="-fx-background-color: #E4DEF6;">
+               <children>
+                  <GridPane layoutY="43.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="141.0" prefWidth="291.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="102.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="156.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="91.0" style="-fx-font-family: forte;" text="Numero" textFill="#867fb6">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="97.0" style="-fx-font-family: forte;" text="Cni du client" textFill="#867fb6" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="numCmdTfd" editable="false" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="nomCliTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label prefHeight="17.0" prefWidth="102.0" style="-fx-font-family: forte;" text="Client" textFill="#867fb6" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="105.0" style="-fx-font-family: forte;" text="Statu du client" textFill="#867fb6" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="typeCliTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="cniCliTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <Label layoutX="79.0" layoutY="6.0" prefHeight="17.0" prefWidth="156.0" style="-fx-font-family: forte;" text="Ajouter une commande" textAlignment="CENTER" textFill="#867fb6" underline="true">
+                     <font>
+                        <Font name="Baskerville Old Face" size="15.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="EnregBtn" layoutX="172.0" layoutY="229.0" mnemonicParsing="false" onAction="#enregistrerHandler" prefHeight="33.0" prefWidth="119.0" style="-fx-background-color: #8EA2C6; -fx-font-family: forte; -fx-font-size: 17;" text="Enregistrer" textFill="#1560bd" />
+                  <Label layoutX="3.0" layoutY="193.0" prefHeight="17.0" prefWidth="117.0" style="-fx-font-family: forte;" text="date de livraison" textFill="#867fb6">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="dateLivraisonCmdTfd" layoutX="135.0" layoutY="189.0" prefHeight="25.0" prefWidth="156.0" />
+               </children>
+            </Pane>
+            <Pane layoutY="285.0" prefHeight="233.0" prefWidth="295.0" style="-fx-background-color: #E4DEF6;">
+               <children>
+                  <Label layoutX="12.0" layoutY="62.0" prefHeight="17.0" prefWidth="106.0" style="-fx-font-family: forte;" text="Produits" textFill="#867fb6">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="pdtsCbx" layoutX="142.0" layoutY="58.0" prefHeight="25.0" prefWidth="149.0" />
+                  <Label layoutX="12.0" layoutY="101.0" prefHeight="17.0" prefWidth="105.0" style="-fx-font-family: forte;" text="Prix Unitaire" textFill="#867fb6">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="12.0" layoutY="140.0" prefHeight="17.0" prefWidth="119.0" style="-fx-font-family: forte;" text="Quantite en stock" textFill="#867fb6">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="puProdTfd" layoutX="142.0" layoutY="97.0" prefHeight="25.0" prefWidth="149.0" />
+                  <TextField fx:id="qtsProTfd" layoutX="142.0" layoutY="136.0" prefHeight="25.0" prefWidth="149.0" />
+                  <Label layoutX="12.0" layoutY="18.0" prefHeight="17.0" prefWidth="132.0" style="-fx-font-family: forte;" text="Quantite commandee" textFill="#867fb6">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="qteCmdeTfd" layoutX="142.0" layoutY="14.0" prefHeight="25.0" prefWidth="149.0" />
+                  <Button fx:id="ajoutBtn" layoutX="184.0" layoutY="187.0" mnemonicParsing="false" onAction="#ajoutHandler" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: #1FC440 #1FC440; -fx-font-family: forte; -fx-font-size: 17;" text="Ajouter" textFill="#fcf5f5" />
+               </children>
+            </Pane>
+            <Button fx:id="suppBtn" layoutX="632.0" layoutY="453.0" mnemonicParsing="false" onAction="#supprimerHandler" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: C4471F; -fx-font-family: forte; -fx-font-size: 17;" text="Supprimer" textFill="#fcf5f5" />
+            <Button fx:id="selectcmdBtn" layoutX="388.0" layoutY="453.0" mnemonicParsing="false" onAction="#selectCmdHandler" prefHeight="32.0" prefWidth="106.0" style="-fx-background-color: #E79518; -fx-font-family: forte; -fx-font-size: 17;" text="Selectioner" textFill="#fcf5f5" />
+         </children>
+      </Pane>
+      <Pane fx:id="facturePane" layoutX="252.0" layoutY="21.0" prefHeight="531.0" prefWidth="802.0" style="-fx-background-color: #ECEBEF;">
+         <children>
+            <Pane layoutX="137.0" layoutY="300.0" prefHeight="62.0" prefWidth="314.0" style="-fx-background-color: #E4DEF6;">
+               <children>
+                  <TextField fx:id="mntFacTfd" layoutX="150.0" layoutY="20.0" prefHeight="25.0" prefWidth="156.0" />
+                  <Label layoutX="32.0" layoutY="24.0" prefHeight="17.0" prefWidth="105.0" style="-fx-font-family: forte;" text="Montant total" textFill="#6b6262">
+                     <font>
+                        <Font name="Baskerville Old Face" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="32.0" layoutY="22.0" prefHeight="262.0" prefWidth="385.0" style="-fx-background-color: #E4DEF6;">
+               <children>
+                  <GridPane layoutY="43.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="141.0" prefWidth="291.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="102.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="156.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="110.0" style="-fx-font-family: forte;" text="Numero facture" textFill="#867fb6">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="97.0" style="-fx-font-family: forte;" text="Cni du client" textFill="#867fb6" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="numFacTfd" editable="false" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="nomCliFacTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label prefHeight="17.0" prefWidth="102.0" style="-fx-font-family: forte;" text="Client" textFill="#867fb6" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="105.0" style="-fx-font-family: forte;" text="Statu du client" textFill="#867fb6" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="typeCliFacTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="cniCliFacTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <Label layoutX="79.0" layoutY="6.0" prefHeight="17.0" prefWidth="156.0" style="-fx-font-family: forte;" text="Enregistrer la facture" textAlignment="CENTER" textFill="#867fb6" underline="true">
+                     <font>
+                        <Font name="Baskerville Old Face" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="417.0" layoutY="22.0" prefHeight="262.0" prefWidth="385.0" style="-fx-background-color: #E4DEF6;">
+               <children>
+                  <GridPane layoutX="31.0" layoutY="42.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="141.0" prefWidth="291.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="130.0" minWidth="10.0" prefWidth="102.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="156.0" minWidth="10.0" prefWidth="156.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="127.0" style="-fx-font-family: forte;" text="Numero commande" textFill="#867fb6">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="17.0" prefWidth="120.0" style="-fx-font-family: forte;" text="date de livraison" textFill="#867fb6" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="numCmdFacTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" />
+                        <TextField fx:id="mntCmdFacTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </TextField>
+                        <Label prefHeight="17.0" prefWidth="128.0" style="-fx-font-family: forte;" text="Montant commande" textFill="#867fb6" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="dateLivraisonFacTfd" prefHeight="25.0" prefWidth="172.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </Pane>
+            <Button fx:id="EnregFacBtn" layoutX="550.0" layoutY="315.0" mnemonicParsing="false" onAction="#enregistrerFacHandler" prefHeight="33.0" prefWidth="119.0" style="-fx-background-color: #8EA2C6; -fx-font-family: forte; -fx-font-size: 17;" text="Enregistrer" textFill="#1560bd" />
+         </children>
+      </Pane>
+      <Pane fx:id="accueilPane" layoutX="255.0" layoutY="25.0" prefHeight="517.0" prefWidth="802.0" style="-fx-background-color: #ECEBEF;">
+         <children>
+            <LineChart fx:id="lineChart" layoutX="36.0" layoutY="8.0" prefHeight="505.0" prefWidth="731.0" title="Graphe de l'inventaire">
+              <xAxis>
+                <CategoryAxis label="les dates" side="BOTTOM" fx:id="x" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis fx:id="y" label="les quantités" side="LEFT" />
+              </yAxis>
+            </LineChart>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

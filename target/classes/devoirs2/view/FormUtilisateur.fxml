@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="406.0" prefWidth="351.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="devoirs2.controller.UserController">
+   <children>
+      <Pane layoutX="-6.0" layoutY="-4.0" prefHeight="412.0" prefWidth="360.0" style="-fx-background-color: #1560BD;">
+         <children>
+            <Pane layoutX="4.0" layoutY="70.0" prefHeight="342.0" prefWidth="356.0" style="-fx-background-color: #EDEDED;">
+               <children>
+                  <Label layoutX="36.0" layoutY="36.0" prefHeight="29.0" prefWidth="73.0" style="-fx-font-family: forte; -fx-font-size: 17;" text="Login" />
+                  <Label layoutX="36.0" layoutY="97.0" prefHeight="29.0" prefWidth="73.0" style="-fx-font-family: forte; -fx-font-size: 17;" text="Password" />
+                  <TextField fx:id="logTfd" layoutX="141.0" layoutY="38.0" prefHeight="35.0" prefWidth="183.0" />
+                  <Button fx:id="connexionBtn" cache="true" layoutX="64.0" layoutY="208.0" mnemonicParsing="false" onAction="#connexionHandler" prefHeight="26.0" prefWidth="73.0" style="-fx-background-color: #1FC440; -fx-font-family: forte; -fx-font-size: 15;" text="    Login" textFill="#fffbfb" />
+                  <ImageView fx:id="imgV1" fitHeight="25.0" fitWidth="23.0" layoutX="78.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/user_40px.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="imgV2" fitHeight="25.0" fitWidth="23.0" layoutX="109.0" layoutY="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/key_40px.png" />
+                     </image>
+                  </ImageView>
+                  <PasswordField fx:id="mdpTfd" layoutX="141.0" layoutY="94.0" prefHeight="35.0" prefWidth="183.0" />
+                  <ImageView fx:id="imgV3" fitHeight="23.0" fitWidth="23.0" layoutX="69.0" layoutY="210.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/login_32px.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="cancelBtn" cache="true" layoutX="210.0" layoutY="208.0" mnemonicParsing="false" onAction="#cancelHandler" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #C4471F; -fx-font-family: forte; -fx-font-size: 15;" text="    Cancel" textFill="#fffbfb" />
+                  <ImageView fx:id="imgV4" fitHeight="23.0" fitWidth="23.0" layoutX="210.0" layoutY="209.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/cancel_32px.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="registerBtn" alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="269.0" mnemonicParsing="false" onAction="#registerHandler" prefHeight="25.0" prefWidth="260.0" style="-fx-border-style: none;" text="vous n'avez pas de compte? Inscrivez-vous" textFill="#1e649a" />
+                  <Label fx:id="incorrectTfd" layoutX="74.0" layoutY="157.0" prefHeight="35.0" prefWidth="213.0" style="-fx-font-family: bell mt; -fx-font-size: 12;" textFill="#b91a1a">
+                     <font>
+                        <Font name="Baskerville Old Face" size="12.0" />
+                     </font></Label>
+                  <ImageView fx:id="incorrectImg" fitHeight="35.0" fitWidth="38.0" layoutX="234.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@icons/crying_48px.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Label layoutX="115.0" layoutY="22.0" prefHeight="29.0" prefWidth="117.0" style="-fx-font-family: forte; -fx-font-size: 25;" text="Connexion" textFill="WHITE" />
+   </children>
+</AnchorPane>
